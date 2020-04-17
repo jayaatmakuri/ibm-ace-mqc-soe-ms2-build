@@ -4,7 +4,8 @@ FROM davexacom/ace11002mqc91soe:latest
 
 # Copy in the bar file to a temporary directory
 #COPY --chown=aceuser ./acesoe/binary/$BAR1 /tmp
-COPY --chown=aceuser ./acesoe/binary/Microservice2.bar /tmp
+COPY ./acesoe/binary/Microservice2.bar /tmp
+RUN chown -R www-data:www-data /usr/local/apache2/
 # DA switch to and from root if using Kaniko build - kaniko has a limitation - it needs to run as root
 # USER root
 # Unzip the BAR file; need to use bash to make the profile work
