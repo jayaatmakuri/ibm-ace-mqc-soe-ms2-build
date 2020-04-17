@@ -1,4 +1,4 @@
-﻿FROM davexacom/ace11002mqc91soe:latest
+FROM davexacom/ace11002mqc91soe:latest
 # if using with Buildah in Tekton the ENV won't work
 #ENV BAR1=Microservice2.bar
 
