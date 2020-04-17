@@ -14,7 +14,7 @@ RUN chown -R root /tmp
 RUN bash -c 'mqsibar -w /home/aceuser/ace-server -a /tmp/Microservice2.bar -c'
 #USER aceuser
 # Switch off the admin REST API for the server run if required
-DA RUN sed -i 's/adminRestApiPort/#adminRestApiPort/g' /home/aceuser/ace-server/server.conf.yaml 
+#DA RUN sed -i 's/adminRestApiPort/#adminRestApiPort/g' /home/aceuser/ace-server/server.conf.yaml 
 
 # We inherit the command from the base layer
 
