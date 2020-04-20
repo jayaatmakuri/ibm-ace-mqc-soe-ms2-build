@@ -11,7 +11,7 @@ RUN chown -R aceuser:aceuser /tmp/Microservice2.bar
 # USER root
 # Unzip the BAR file; need to use bash to make the profile work
 #RUN bash -c 'mqsibar -w /home/aceuser/ace-server -a /tmp/$BAR1 -c'
-USER aceuser
+#USER aceuser
 RUN bash -c 'mqsibar -w /home/aceuser/ace-server -a /tmp/Microservice2.bar -c'
 #USER aceuser
 # Switch off the admin REST API for the server run if required
