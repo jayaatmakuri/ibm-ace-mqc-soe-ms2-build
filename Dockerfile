@@ -1,4 +1,5 @@
-FROM davexacom/ace11002mqc91soe:latest
+FROM ibmcom/ace:latest
+#FROM davexacom/ace11002mqc91soe:latest
 # if using with Buildah in Tekton the ENV won't work
 #ENV BAR1=Microservice2.bar
 
@@ -12,7 +13,7 @@ RUN chown -R aceuser:aceuser /tmp/Microservice2.bar
 # Unzip the BAR file; need to use bash to make the profile work
 #RUN bash -c 'mqsibar -w /home/aceuser/ace-server -a /tmp/$BAR1 -c'
 #USER aceuser
-#RUN bash -c 'mqsibar -w /home/aceuser/ace-server -a /tmp/Microservice2.bar -c'
+RUN bash -c 'mqsibar -w /home/aceuser/ace-server -a /tmp/Microservice2.bar -c'
 #USER aceuser
 # Switch off the admin REST API for the server run if required
 #DA RUN sed -i 's/adminRestApiPort/#adminRestApiPort/g' /home/aceuser/ace-server/server.conf.yaml 
@@ -20,4 +21,4 @@ RUN chown -R aceuser:aceuser /tmp/Microservice2.bar
 # We inherit the command from the base layer
 
 # Expose ports
-#EXPOSE 7800
+EXPOSE 7800
